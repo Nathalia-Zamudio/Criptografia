@@ -8,18 +8,16 @@ k = int(input("Ingrese la llave:_"))
 codigo = []
 cifrado = []
 
-# Convertir cada letra en su índice correspondiente
 for i in frase:
-    if i in diccionario:  # Si el carácter está en el diccionario, cifrarlo
+    if i in diccionario: 
         codigo.append((diccionario[i] + k) % len(A))
     else:
-        codigo.append(i)  # Si es un espacio u otro carácter, mantenerlo igual
+        codigo.append(i)  
 
-# Convertir los índices cifrados de nuevo a letras
 for i in codigo:
-    if isinstance(i, int):  # Si es un número, es una letra cifrada
+    if isinstance(i, int): 
         cifrado.append(A[i])
     else:
-        cifrado.append(i)  # Si es un espacio, mantenerlo igual
+        cifrado.append(i) 
 
 print(f"El cifrado es: {''.join(cifrado)}")
